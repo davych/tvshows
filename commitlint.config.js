@@ -4,9 +4,9 @@ module.exports = {
         'references-empty':[2,'never'],
         "subject-case":[0,"never"]
     },
-    parserPreset:{
-        parseOpts:{
-            issuePrefixes:['ZHIHU-']
-        }
-    }
+    parserPreset: {
+      parserOpts: {
+        issuePrefixes: ['ZHIHU-']
+      }
+    },
 };
