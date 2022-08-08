@@ -1,7 +1,7 @@
 # tvshows
 This is training project for newcomer
 
-# setup project
+# setup project。
 https://create-react-app.dev/
 
 # code quality
