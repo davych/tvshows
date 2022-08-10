@@ -3,10 +3,11 @@ module.exports = {
     rules: {
         'references-empty':[2,'never'],
         "subject-case":[0,"never"]
-    },
+    }
+    ,
     parserPreset:{
         parserOpts:{
-            issuePrefixes:['ZHIHU-']
+            issuePrefixes:['TVSHOW-']
         }
     }
 };
