@@ -2,7 +2,7 @@
 This is training project for newcomer
 
 # setup project。
-https://create-react-app.dev/
+https://create-react-app.dev/1
 
 # code quality
 Ensure eslint can work, must have commit lint
