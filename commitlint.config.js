@@ -7,7 +7,7 @@ module.exports = {
     ,
     parserPreset:{
         parserOpts:{
-            issuePrefixes:['TVSHOW-']
+            issuePrefixes:['#']
         }
     }
 };

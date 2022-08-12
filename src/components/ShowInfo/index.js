@@ -49,7 +49,7 @@ export default class ShowInfo extends Component {
                     </div>
                     <p>
                         <strong>Official site:</strong>
-                        <a href="https://www.cartoonnetwork.com/video/powerpuff-girls/index.html" rel="noopener" target="_blank">www.cartoonnetwork.com</a>
+                        <a href="https://www.cartoonnetwork.com/video/powerpuff-girls/index.html" rel="noopener noreferrer" target="_blank">www.cartoonnetwork.com</a>
                     </p>
             </section>
         </Paper>
