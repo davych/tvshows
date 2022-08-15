@@ -2,13 +2,27 @@
 import './App.css';
 import SiteHeader from './components/SiteHeader';
 import Main from './components/Main';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import TvShowList from './pages/TvShowList'
+import TVShowPage from './components/TVShowPage';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <SiteHeader />
-        <Main />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<TvShowList />} />
+            <Route path=":id" element={<TVShowPage />} >
+              <Route path="details" element={<TVShowPage />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
         {/* <ShowIntro /> */}
         {/* <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -23,7 +37,7 @@ function App() {
           Learn React
         </a> */}
       </header>
-    </div>
+    </div >
   );
 }
 
