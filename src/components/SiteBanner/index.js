@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Button, Paper, IconButton, InputBase } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search';
 import Grid from '@mui/material/Unstable_Grid2';
 
-export default class SiteBanner extends Component {
-  render() {
-    return (
-      <div>
+export default function index() {
+  return (
+    <div>
         <Grid container spacing={2} sx={{
                 backgroundColor: "#282c34",
                 mt: '10px'
@@ -49,6 +48,5 @@ export default class SiteBanner extends Component {
             </Grid>
         </Grid>
         </div>
-    )
-  }
+  )
 }
