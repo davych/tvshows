@@ -1,22 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react'
 import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import { NavLink, Outlet } from 'react-router-dom';
 
-export default class BreadCrumbs extends Component {
-    constructor( props ){
-        super(props)
-    }
-
-  render() {
-    return (
-      <Grid container spacing={2}>
-        {this.props.breads.map( (bread) => (
-            <Grid item  sx={{
-              color:"black"
-            }}>
-              {bread}
-            </Grid>
-        ))}
+export default function BreadCrumbs(props) {
+  return (
+    <Box>
+      <Grid container spacing={4}>
+            {props.breads.map( (bread) => (
+              <Grid item>
+                <NavLink to={`/${bread}`}>{bread}</NavLink>
+              </Grid>
+            ))}
       </Grid>
-    )
-  }
+      <Outlet />
+    </Box>
+  )
 }

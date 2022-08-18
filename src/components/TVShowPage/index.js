@@ -1,25 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Grid from '@mui/material/Grid';
-import ShowIntro from '../ShowIntro';
-import ShowInfo from '../ShowInfo';
+import EpisodeDetailPage from '../EpisodeDetailPage';
 
-export default class TVShowPage extends Component {
-  render() {
-    return (
-      <div>
-        <Grid container space = {2}>
-          <Grid xs = {8} sx = {{
-            
-            }}>
-              <ShowIntro />
-            </Grid>
-            <Grid xs = {4} sx = {{
-            
-            }}>
-                <ShowInfo />
-            </Grid>
+export default function TVShowPage() {
+  return (
+    <Grid container space = {2}>
+          <Grid xs = {8}>
+              <EpisodeDetailPage />
+          </Grid>
         </Grid>
-      </div>
-    )
-  }
+  )
 }
