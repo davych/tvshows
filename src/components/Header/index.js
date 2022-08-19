@@ -1,39 +1,39 @@
-import React from 'react';
-import { Button, Paper, IconButton, InputBase } from '@mui/material'
+import React from 'react'
+import { Button, Paper, IconButton, InputBase, Box } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import Grid from '@mui/material/Unstable_Grid2';
 
-export default function index() {
-  return (
-    <div>
+export default function SiteHeader() {
+    return (
+      <div>
+        <Box>
         <Grid container spacing={2} sx={{
-                backgroundColor: "#282c34",
-                mt: '10px'
+          backgroundColor: "#282c34",
+          mt: '10px'
         }}>
             <Grid xs={3} sx={{
-            backgroundColor:"lightgrey",
-            fontSize:"40px"
+              backgroundColor:"lightgrey",
+              fontSize:"40px"
             }}>
-            LOGO
+              LOGO
             </Grid>
             <Grid xs={6}>
-                <Paper
-                            component="form"
-                            sx={{ p: '2px 4px',ml: 5, display: 'flex', alignItems: 'center', width: 400 }}
-                    >
-                    <InputBase
-                        sx={{ ml: 1, flex: 1 }}
-                        placeholder="Search Google Maps"
-                        inputProps={{ 'aria-label': 'search google maps' }}
+                <Paper component="form" sx={{ p: '2px 4px',
+                  ml: 5,
+                  display: 'flex',
+                  alignItems: 'center',
+                  width: 400 
+                }}>
+                    <InputBase sx={{ ml: 1, flex: 1 }}
+                      placeholder="Search Google Maps"
+                      inputProps={{ 'aria-label': 'search google maps' }}
                     />
                     <IconButton type="submit" sx={{ p: '10px' }} aria-label="search">
                         <SearchIcon />
                     </IconButton>
                 </Paper>
             </Grid>
-            <Grid xs={3} sx={{
-            
-            }}>
+            <Grid xs={3}>
                 <Button color='success' sx={{
                     float: "right",
                     mr: "20px",
@@ -47,6 +47,8 @@ export default function index() {
                 }}>REGISTER</Button>
             </Grid>
         </Grid>
-        </div>
+        </Box>
+
+    </div>
   )
 }

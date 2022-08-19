@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -8,13 +8,14 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Link, Outlet } from 'react-router-dom';
 import { getEpisodes } from '../../data';
+import Header from '../../../src/components/Header';
 
-export default function EpisodeDetailPage() {
-    let episodes = getEpisodes();
+export default function List() {
+  let episodes = getEpisodes();
   return (
-    <div>
-        {/* <BreadCrumbs breads = {breadsValue}/> */}
-        <TableContainer component={Paper}>
+    <Fragment>
+      <Header />
+      <TableContainer component={Paper}>
             <Table aria-label="simple table" sx={{
                 minWidth: 650
             }}>
@@ -37,7 +38,7 @@ export default function EpisodeDetailPage() {
                                 {episode.number}
                             </TableCell>
                             <TableCell align='right'>{episode.date}</TableCell>
-                            <Link to={`/Shows/${episode.number}`}>
+                            <Link to={`/${episode.number}`}>
                                 <TableCell align='right'>{episode.name}</TableCell>
                             </Link>
                             <TableCell align='right'>⭐⭐⭐</TableCell>
@@ -49,6 +50,6 @@ export default function EpisodeDetailPage() {
             </Table>
         </TableContainer>
         <Outlet />
-      </div>
+    </Fragment>
   )
 }
