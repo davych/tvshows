@@ -6,15 +6,14 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { Link, Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { getEpisodes } from '../../data';
-import Header from '../../../src/components/Header';
+import { Outlet } from 'react-router-dom';
 
 export default function List() {
   let episodes = getEpisodes();
   return (
     <Fragment>
-      <Header />
       <TableContainer component={Paper}>
             <Table aria-label="simple table" sx={{
                 minWidth: 650
@@ -38,7 +37,7 @@ export default function List() {
                                 {episode.number}
                             </TableCell>
                             <TableCell align='right'>{episode.date}</TableCell>
-                            <Link to={`/${episode.number}`}>
+                            <Link to={`/tvshows/detail/${episode.number}`}>
                                 <TableCell align='right'>{episode.name}</TableCell>
                             </Link>
                             <TableCell align='right'>⭐⭐⭐</TableCell>
@@ -49,7 +48,6 @@ export default function List() {
                 </TableBody>
             </Table>
         </TableContainer>
-        <Outlet />
     </Fragment>
   )
 }

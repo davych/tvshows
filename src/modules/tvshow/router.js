@@ -1,13 +1,21 @@
-import List from './List';
 import Detail from './Detail';
+import DefaultLayout from '../../layout/DefaultLayout';
+import DetailLayout from '../../layout/DetailLayout';
 
 export const TVShowRouter = {
     path: '/',
-    element: <List />,
+    element: <DefaultLayout />,
     children: [
         {
-            path: ':number',
-            element: <Detail />
-        }
+            path: "tvshows",
+            element: <DetailLayout />,
+            children:[
+                {
+                    path: 'detail/:number',
+                    element: <Detail />
+                }
+            ]
+        },
+        
     ]
 }

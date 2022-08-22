@@ -2,14 +2,12 @@ import React, { Fragment } from 'react';
 import { useParams } from 'react-router-dom';
 import { getEpisode } from '../../data';
 import Paper from '@mui/material/Paper';
-import Header from '../../../src/components/Header';
 
 export default function Detail() {
     let params = useParams();
     let episode = getEpisode(params.number);
   return (
     <Fragment>
-        <Header />
         <Paper sx={{
             pb: '10px'
         }}>
