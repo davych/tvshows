@@ -1,22 +1,22 @@
-import React, { Fragment } from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import { Link } from 'react-router-dom';
-import { getEpisodes } from '../../data';
-import { Outlet } from 'react-router-dom';
+import Paper from '@mui/material/Paper'
+import Table from '@mui/material/Table'
+import TableBody from '@mui/material/TableBody'
+import TableCell from '@mui/material/TableCell'
+import TableContainer from '@mui/material/TableContainer'
+import TableHead from '@mui/material/TableHead'
+import TableRow from '@mui/material/TableRow'
+import React, { Fragment } from 'react'
+import { Link } from 'react-router-dom'
 
-export default function List() {
-  let episodes = getEpisodes();
+import { getEpisodes } from '../../data'
+
+export default function List () {
+  const episodes = getEpisodes()
   return (
     <Fragment>
       <TableContainer component={Paper}>
             <Table aria-label="simple table" sx={{
-                minWidth: 650
+              minWidth: 650
             }}>
                 <TableHead>
                     <TableRow>
@@ -29,7 +29,7 @@ export default function List() {
                 </TableHead>
                 <TableBody>
                     { episodes.map((episode) => (
-                        <TableRow 
+                        <TableRow
                             key = {episode.number}
                             sx = {{ '&:last-child td, &:last-child th': { border: 0 } }}
                             >
@@ -43,7 +43,7 @@ export default function List() {
                             <TableCell align='right'>⭐⭐⭐</TableCell>
                             <TableCell align='right'>status</TableCell>
                         </TableRow>
-                    
+
                     ))}
                 </TableBody>
             </Table>

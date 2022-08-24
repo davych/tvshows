@@ -1,12 +1,10 @@
-import './App.css';
-import SiteHeader from './components/SiteHeader';
+import './App.css'
 
-function App() {
+function App () {
   return (
     <div className="App">
-      <SiteHeader />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
