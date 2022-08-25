@@ -1,8 +1,7 @@
-import React from 'react';
-import  Grid from '@mui/material/Grid';
-import TVShowPage from '../TVShowPage';
+import Grid from '@mui/material/Grid'
+import React from 'react'
 
-export default function Main() {
+export default function Main () {
   // let breadsValue = ["Main","Episodes","Seasons","Cast","Crew","Characters","Gallery","News"];
   return (
     <div style={{
@@ -13,11 +12,8 @@ export default function Main() {
     }}>
       <Grid container space = {2}>
         <Grid xs = {12} >
-          <TVShowPage />
         </Grid>
       </Grid>
     </div>
   )
-
 }
-
