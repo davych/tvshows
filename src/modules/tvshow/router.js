@@ -1,7 +1,7 @@
 import DefaultLayout from '../../layout/DefaultLayout'
-import DetailLayout from '../../layout/DetailLayout'
 
 import Detail from './Detail'
+import TVList from './TVList'
 
 export const TVShowRouter = {
   path: '/',
@@ -9,14 +9,11 @@ export const TVShowRouter = {
   children: [
     {
       path: 'tvshows',
-      element: <DetailLayout />,
-      children: [
-        {
-          path: 'detail/:number',
-          element: <Detail />
-        }
-      ]
+      element: <TVList />
+    },
+    {
+      path: 'tvshows/detail/:number',
+      element: <Detail />
     }
-
   ]
 }

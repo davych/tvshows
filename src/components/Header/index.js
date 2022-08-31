@@ -13,7 +13,8 @@ export default function Header () {
         }}>
             <Grid xs={3} sx={{
               backgroundColor: 'lightgrey',
-              fontSize: '40px'
+              fontSize: '40px',
+              textAlign: 'center'
             }}>
               LOGO
             </Grid>
@@ -43,11 +44,8 @@ export default function Header () {
                 }}>LOGIN</Button>
                 <Button color='success' sx={{
                   float: 'right',
-
                   mr: '20px',
-
                   fontSize: '20px'
-
                 }}>REGISTER</Button>
             </Grid>
         </Grid>

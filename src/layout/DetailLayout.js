@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react'
 import { Outlet } from 'react-router-dom'
 
-import List from '../modules/tvshow/List'
+import TVList from '../modules/tvshow/TVList'
 
 export default function DetailLayout () {
   return (
     <Fragment>
-        <List />
+        <TVList />
         <Outlet />
     </Fragment>
   )
