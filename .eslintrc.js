@@ -35,7 +35,9 @@ module.exports = {
         }
       }
     ],
-    'no-console': 'error',
+    // 'no-console': 'error',
+    'no-console': 'warn',
+    'no-debugger': 'off',
     'no-array-constructor': 'error',
     'import/newline-after-import': 'error',
     'import/no-useless-path-segments': 'error',

@@ -1,30 +1,33 @@
 import Paper from '@mui/material/Paper'
-import React, { Fragment } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
-import { getEpisode } from '../../data'
+import { getShowByID } from './services'
+import { useStyle } from './styles'
 
 export default function Detail () {
+  const [show, setShow] = useState()
   const params = useParams()
-  const episode = getEpisode(params.number)
+  const classes = useStyle()
+
+  useEffect(() => {
+    getShowByID(params.number)
+      .then(function (response) {
+        setShow(response.data)
+      }).catch(function (error) {
+        alert(error)
+      })
+  })
+
   return (
     <Fragment>
-        <Paper sx={{
-          pb: '10px'
-        }}>
-            <h2>{episode.name}</h2>
-            <p>
-                <span>{episode.number }</span>&nbsp;&nbsp;&nbsp;&nbsp;
-                <span>{episode.date}</span>
-                <Paper sx={{
-                  width: '70%',
-                  height: '100px',
-                  border: '2px red solid',
-                  m: '0 auto',
-                  mt: '10px'
-                }} />
-            </p>
-      </Paper>
+        {show
+          ? (
+          <Paper className={classes.detailCard}>
+            <h2 className={classes.cardHeader}>{show.name}</h2>
+            <img className={classes.cardImg} src={show.image.medium} alt={show.name} />
+          </Paper>)
+          : (<span>Loading...</span>) }
     </Fragment>
   )
 }
