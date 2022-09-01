@@ -1,13 +1,17 @@
 import Paper from '@mui/material/Paper'
-import axios from 'axios'
-import React, { Fragment } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
+import { getShowByID } from './services'
+import { useStyle } from './styles'
+
 export default function Detail () {
+  const [show, setShow] = useState()
   const params = useParams()
-  const [show, setShow] = React.useState()
-  React.useEffect(() => {
-    axios.get('https://api.tvmaze.com/shows/' + params.number)
+  const classes = useStyle()
+
+  useEffect(() => {
+    getShowByID(params.number)
       .then(function (response) {
         setShow(response.data)
       }).catch(function (error) {
@@ -17,15 +21,13 @@ export default function Detail () {
 
   return (
     <Fragment>
-        <Paper sx={{
-          width: '80%',
-          m: 'auto',
-          mt: '20px',
-          pb: '5px'
-        }}>
-            <h2 style={{ margin: 'auto', textAlign: 'center' }}>{show.name}</h2>
-            <img src={show.image.medium} alt={show.name} style={{ display: 'block', margin: '10px auto' }} />
-      </Paper>
+        {show
+          ? (
+          <Paper className={classes.detailCard}>
+            <h2 className={classes.cardHeader}>{show.name}</h2>
+            <img className={classes.cardImg} src={show.image.medium} alt={show.name} />
+          </Paper>)
+          : (<span>Loading...</span>) }
     </Fragment>
   )
 }
